@@ -1,0 +1,382 @@
+<!doctype html>
+<!-- Declares that this file uses modern HTML5. -->
+<html lang="en">
+  <head>
+    <!-- UTF-8 supports letters, symbols and international characters. -->
+    <meta charset="UTF-8" />
+
+    <!-- Makes the layout follow the actual width of phones and tablets. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Search engines may display this summary in search results. -->
+    <meta
+      name="description"
+      content="TTSET Global provides web development, software, networking and practical ICT training services."
+    />
+
+    <!-- Text displayed on the browser tab. -->
+    <title>TTSET Global Company Ltd | Technology Solutions</title>
+
+    <!-- Connects the external CSS file to this HTML page. -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- The header contains the company identity and navigation. -->
+    <header class="site-header">
+      <div class="container header-content">
+        <!-- A link around the logo returns visitors to the top of the page. -->
+        <a class="brand" href="#home" aria-label="TTSET Global home">
+          <img
+            src="assets/logo.jpg"
+            alt="TTSET Global Company Ltd logo"
+            width="100"
+            height="100"
+          />
+        </a>
+       <!--The button to display on small screens-->
+       <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+            
+        </button>
+      
+        <!-- Primary navigation connects users to the major sections. -->
+        <nav
+          class="site-nav"
+          id="primary-navigation"
+          aria-label="Primary navigation"
+        >
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- The main element contains the unique content of this webpage. -->
+    <main>
+      <!-- HERO: immediately communicates the main business value. -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Technology • Training • Innovation</p>
+            <h1 id="hero-title">
+              We build practical digital solutions for growing organisations.
+            </h1>
+            <p class="hero-text">
+              TTSET Global provides web development, software engineering,
+              networking and professional ICT training.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#services"
+                >Explore Our Services</a
+              >
+              <a class="button button-secondary" href="#contact"
+                >Request a Consultation</a
+              >
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img
+              src="assets/pic.jpg"
+              alt="Illustration of a modern business website"
+              width="1200"
+              height="800"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- ABOUT: explains the company and builds visitor confidence. -->
+      <section
+        class="section section-light"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container split-layout">
+          <div class="section-image">
+            <img
+              src="assets/pro.jpeg"
+              alt="Technology team discussing a business project"
+              width="1200"
+              height="800"
+              loading="lazy"
+            />
+          </div>
+          <div class="section-content">
+            <p class="eyebrow">About Our Company</p>
+            <h2 id="about-title">
+              Bridging the gap between theory and practice
+            </h2>
+            <p>
+              We help students, businesses and institutions use technology to
+              solve real operational problems.
+            </p>
+            <p>
+              Our approach combines professional training, reliable
+              implementation and continuous technical support.
+            </p>
+            <ul class="feature-list">
+              <li>Practical and industry-focused training</li>
+              <li>Responsive and secure digital products</li>
+              <li>Solutions adapted to each organisation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- SERVICES: cards make several offerings easy to scan. -->
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">What We Do</p>
+            <h2 id="services-title">Professional technology services</h2>
+            <p>
+              Each service card uses the same reusable class, which keeps the
+              design consistent.
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="service-card">
+              <span class="card-number" aria-hidden="true">01</span>
+              <h3>Web Development</h3>
+              <p>
+                Responsive business websites and web applications designed for
+                real users.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="card-number" aria-hidden="true">02</span>
+              <h3>Software Development</h3>
+              <p>
+                Custom management systems for schools, companies and service
+                organisations.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="card-number" aria-hidden="true">03</span>
+              <h3>Networking</h3>
+              <p>
+                Network planning, installation, configuration, security and
+                maintenance.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="card-number" aria-hidden="true">04</span>
+              <h3>ICT Training</h3>
+              <p>
+                Practical training in programming, design, networking and
+                engineering software.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- PORTFOLIO: demonstrates evidence of completed work. -->
+      <section
+        class="section section-dark"
+        id="portfolio"
+        aria-labelledby="portfolio-title"
+      >
+        <div class="container">
+          <div class="section-heading section-heading-light">
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="portfolio-title">
+              Projects designed to solve practical problems
+            </h2>
+          </div>
+          <div class="portfolio-grid">
+            <article class="project-card">
+              <img
+                src="assets/computer.jpeg"
+                alt="School management system interface illustration"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+              <div class="project-content">
+                <p class="project-type">Web Application</p>
+                <h3>School Management System</h3>
+                <p>
+                  Admissions, fees, examinations, timetables and student records
+                  in one system.
+                </p>
+              </div>
+              
+            </article>
+            <article class="project-card">
+              <img
+                src="assets/E-com.jpeg"
+                alt="Online shop interface illustration"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+              <div class="project-content">
+                <p class="project-type">E-commerce</p>
+                <h3>Online Business Store</h3>
+                <p>
+                  A mobile-friendly product catalogue with clear calls to action
+                  and contact options.
+                </p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="assets/wireless.jpeg"
+                alt="Computer network monitoring interface illustration"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+              <div class="project-content">
+                <p class="project-type">Infrastructure</p>
+                <h3>Business Network Deployment</h3>
+                <p>
+                  A structured wired and wireless network for reliable staff and
+                  customer access.
+                </p>
+              </div>
+            </article>
+           
+            
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT: provides company details and a form for enquiries. -->
+      <section
+        class="section section-light"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact-grid">
+          <div class="contact-details">
+            <p class="eyebrow">Contact Us</p>
+            <h2 id="contact-title">Let us discuss your next project</h2>
+            <p>
+              Complete the form or contact the office using the details below.
+            </p>
+            <address>
+              <p><strong>Location:</strong> Douala, Cameroon</p>
+              <p>
+                <strong>Telephone:</strong>
+                <a href="tel:+237600000000">+237 600 000 000</a>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:info@example.com">info@example.com</a>
+              </p>
+            </address>
+          </div>
+
+          
+          <!-- novalidate allows our JavaScript lesson to control validation messages. -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="full-name">Full name</label>
+              <input
+                id="full-name"
+                name="fullName"
+                type="text"
+                autocomplete="name"
+                required
+              />
+              <small class="error-message" id="name-error"></small>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+              <small class="error-message" id="email-error"></small>
+            </div>
+            <div class="form-group">
+              <label for="service">Service required</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="web-development">Web Development</option>
+                <option value="software-development">
+                  Software Development
+                </option>
+                <option value="networking">Networking</option>
+                <option value="training">ICT Training</option>
+              </select>
+              <small class="error-message" id="service-error"></small>
+            </div>
+            <div class="form-group">
+              <label for="message">Project message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                minlength="20"
+                required
+              ></textarea>
+              <small class="error-message" id="message-error"></small>
+            </div>
+            <button class="button button-primary" type="submit">
+              Send Enquiry
+            </button>
+            <p
+              class="form-status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- The footer contains supporting links and copyright information. -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img
+            class="footer-logo"
+            src="assets/logo.jpeg"
+            alt="TTSET Global Company Ltd"
+            width="100"
+            height="100"
+          />
+          <p>Practical technology solutions for education and business.</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Office Hours</h2>
+          <p>Monday - Friday<br />8:00 a.m. - 5:00 p.m.</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span id="current-year">2026</span> TTSET Global Company Ltd.
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript is placed before </body> so the HTML loads first. -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

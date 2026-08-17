@@ -1,0 +1,634 @@
+/* =========================================================
+   1. DESIGN VARIABLES
+   Reusable values are stored once and used throughout the stylesheet.
+   ========================================================= */
+:root {
+    --colour-primary: #2563eb;
+    --colour-primary-dark: #1d4ed8;
+    --colour-dark: #0f172a;
+    --colour-text: #334155;
+    --colour-muted: #64748b;
+    --colour-light: #f8fafc;
+    --colour-border: #cbd5e1;
+    --colour-white: #ffffff;
+    --colour-success: #166534;
+    --colour-error: #b91c1c;
+    --shadow-small: 0 8px 22px rgba(15, 23, 42, 0.08);
+    --shadow-large: 0 20px 48px rgba(15, 23, 42, 0.16);
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 28px;
+    --container-width: 1180px;
+    --transition: 180ms ease;
+}
+
+/* =========================================================
+   2. RESET AND BASE STYLES
+   ========================================================= */
+
+/* Includes padding and borders inside each element's declared width. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Enables smooth movement when an internal navigation link is clicked. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sets the default typeface, colours and line spacing for the whole page. */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    color: #334155;
+    background-color: #ffffff;
+}
+
+/* Prevents images from overflowing their containers. */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Removes unwanted top spacing and creates consistent bottom spacing. */
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+/* Headings use a darker colour and tighter line spacing. */
+h1,
+h2,
+h3 {
+    color: #0f172a;
+    line-height: 1.18;
+}
+
+/* Links inherit nearby text colour unless a component changes it. */
+a {
+    color: inherit;
+}
+
+/* A reusable container centres content and prevents it from becoming too wide. */
+.container {
+    width: min(100% - 40px, 1180px);
+    margin-inline: auto;
+}
+
+/* Provides equal vertical spacing around standard page sections. */
+.section {
+    padding: 88px 0;
+}
+
+.section-light {
+    background-color: #f8fafc;
+}
+
+/* Small uppercase label placed above major headings. */
+.eyebrow {
+    margin-bottom: 12px;
+    color: #2563eb;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   3. HEADER AND NAVIGATION
+   ========================================================= */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header-content {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a {
+    position: relative;
+    padding: 10px 0;
+    color: #0f172a;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    height: 2px;
+    background-color: #2563eb;
+    transform: scaleX(0);
+    transition: transform 180ms ease;
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* =========================================================
+   4. HERO SECTION
+   ========================================================= */
+.hero {
+    padding: 92px 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 58%, #dbeafe 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.hero h1 {
+    max-width: 760px;
+    margin-bottom: 24px;
+    font-size: clamp(2.45rem, 5vw, 4.75rem);
+}
+
+.hero-text {
+    max-width: 650px;
+    margin-bottom: 32px;
+    color: #475569;
+    font-size: 1.16rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-visual img {
+    border-radius: 28px;
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.16);
+}
+
+/* Buttons are reusable links or controls with a consistent appearance. */
+.button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    color: #ffffff;
+    background-color: #2563eb;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+    background-color: #1d4ed8;
+}
+
+.button-secondary {
+    color: #0f172a;
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+}
+
+/* =========================================================
+   5. ABOUT SECTION
+   ========================================================= */
+.split-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.section-image img {
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.section-content h2,
+.section-heading h2,
+.contact-details h2 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.feature-list {
+    display: grid;
+    gap: 12px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 30px;
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* =========================================================
+   6. SERVICES
+   ========================================================= */
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    position: relative;
+    min-height: 270px;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.16);
+}
+
+.card-number {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 26px;
+    color: #ffffff;
+    background-color: #2563eb;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+}
+
+/* =========================================================
+   7. PORTFOLIO
+   ========================================================= */
+.section-dark {
+    color: #cbd5e1;
+    background-color: #0f172a;
+}
+
+.section-heading-light h2 {
+    color: #ffffff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.project-card {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 26px;
+}
+
+.project-content h3 {
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: #475569;
+}
+
+.project-type {
+    margin-bottom: 8px;
+    color: #2563eb !important;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   8. CONTACT SECTION AND FORM
+   ========================================================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 64px;
+}
+
+.contact-details address {
+    margin-top: 26px;
+    font-style: normal;
+}
+
+.contact-details a {
+    color: #2563eb;
+}
+
+.contact-form {
+    padding: 34px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #0f172a;
+    background-color: #ffffff;
+    font: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    outline: 3px solid rgba(37, 99, 235, 0.15);
+}
+
+/* JavaScript places validation messages inside these elements. */
+.error-message {
+    display: block;
+    min-height: 20px;
+    margin-top: 5px;
+    color: #b91c1c;
+}
+
+.input-error {
+    border-color: #b91c1c !important;
+}
+
+.form-status {
+    min-height: 24px;
+    margin: 18px 0 0;
+    color: #166534;
+    font-weight: 700;
+}
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+.site-footer {
+    padding-top: 64px;
+    color: #cbd5e1;
+    background-color: #020617;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr;
+    gap: 48px;
+    padding-bottom: 48px;
+}
+
+.footer-logo {
+    margin-bottom: 18px;
+    border-radius: 50%;
+}
+.footer-title {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.footer-links {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    padding: 22px 0;
+    border-top: 1px solid #1e293b;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   10. MOBILE MENU BUTTON
+   Hidden on large screens and displayed inside media queries.
+   ========================================================= */
+.menu-toggle{
+
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 100%;
+    height:  3px;
+    margin: 5px 0;
+    background-color: #0f172a;
+    border-radius: 2px;
+}
+/* =========================================================
+   11. RESPONSIVE DESIGN
+   Rules below change layouts when the screen becomes narrower.
+   ========================================================= */
+@media (max-width: 980px) {
+    .hero-grid,
+    .split-layout,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-visual {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 760px) {
+    .section,
+    .hero {
+        padding: 68px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 78px;
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 16px 20px 24px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    /* JavaScript adds this class when the menu button is selected. */
+    .site-nav.is-open {
+        display: block;
+    }
+
+    .nav-list {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .card-grid,
+    .portfolio-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .hero-actions,
+    .hero-actions .button {
+        width: 100%;
+    }
+}
+
+/* Respects users who prefer less visual movement. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
